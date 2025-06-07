@@ -61,6 +61,32 @@ then link the ^home_page.dart^ file to main.dart using either of this two method
 
 ####
 now for assets like images,  create a folder called ^assets^ in the root folder then create another folder for images ^images^
+####
+
+
+
+####
+now to get all the assets images imported go to ^pubspec.yaml^ in the root folder and go to the ^assets:^ section after flutter, 
+uncomment it then add ^  - assets\images\^ this will import all images in assets/images
+####
+
+
+
+####
+                ^@override
+                Widget build(BuildContext context) {
+                    return Scaffold(
+                    body: Container(
+                        decoration: const BoxDecoration(
+                        color: Colors.red,
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("assets\images\astro_moon.png"),
+                        ),
+                        ),
+                    ),
+                    );
+                }^
 
 ####
 
@@ -68,36 +94,101 @@ now for assets like images,  create a folder called ^assets^ in the root folder 
 
 
 ####
+IMAGE WIDGET
+creating a widget for the image instead of it in the main method 
+            ^Widget _astroImageWidget() {
+                 return Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.red,
+                        image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets\images\astro_moon.png"),
+                        ),
+                    ),
+                    );
+            }^
+then add it to the main method back
+            ^@override
+            Widget build(BuildContext context) {
+                return Scaffold(body: _astroImageWidget());
+            }
 
+            Widget _astroImageWidget() {
+                return Container(
+                decoration: const BoxDecoration(
+                    color: Colors.red,
+                    image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage("assets\images\astro_moon.png"),
+                    ),
+                ),
+                );
+            }^
+
+####
+
+
+
+
+@####
+TEXT WIDGET
+            ^Widget _pageTitle() {
+                return const Text(
+                "GoMoon",
+                style: TextStyle(
+                    fontSize: 32,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                ),
+                );
+            }^
+
+####
+
+
+
+
+
+@####
+SAFE AREA WIDGET
+            ^@override
+            Widget build(BuildContext context) {
+                return Scaffold(body: SafeArea(child: Container(child: _pageTitle(),)));
+            }^
 
 
 ####
 
 
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-
-
-
-
-
-
-
-
-
+@####
 
 
 ####
-NOTES: to create a @override function faster simply press ^build^ and click the one with [] in front in options
 
+
+
+
+
+
+
+
+
+
+
+@####
+WIDGETS
+    Image: body: Container(decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("img.jpg"))),)
+    Color: color: Colors.red,^blue, green, etc^
+    Filing: fit: Boxfit.contain,^cover, fill, etc^
+
+####
+
+
+
+
+
+@####
+NOTES:  * to create a @override function faster simply press ^build^ and click the one with [] in front in options
+        * ^Alt+Shift+F^ to reformat(resturcture) my flutter code
+        * a container cannot grow beyond what its parents size is
 ####
