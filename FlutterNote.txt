@@ -1,0 +1,103 @@
+#### 
+first main.dart setup
+####
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GoMoon',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),
+      ),
+      home: Scaffold(),
+    ); // endMaterialApp
+  }
+}
+
+
+#### 
+the next thing is to delete the ^test^ folder in the root folder because we dont need it 
+####
+
+
+####
+next create a folder called ^pages^ in the ^lib^ folder and then another file called ^home_page.dart^ in the ^pages^ folder
+####
+
+
+####
+then in the home_page.dart file create
+
+        ^import 'package:flutter/material.dart';
+
+        class HomePage extends StatelessWidget {
+            const HomePage({Key? key}) : super(key: key);
+
+            @override
+            Widget build(BuildContext context) {
+                return Scaffold();
+            }
+        }^
+####
+
+
+
+####
+then link the ^home_page.dart^ file to main.dart using either of this two method
+1. change the ^home: Scafford()^ to ^home: HomePage()^ and it will automatically import the ^home_page.dart^ to ^main.dart^ if it didnt work try 2
+2. after line 1 ^import 'package:flutter/material.dart';^  press  ^import './pages/home_page.dart';^ into line 2 to import it and its done  
+####
+
+
+####
+now for assets like images,  create a folder called ^assets^ in the root folder then create another folder for images ^images^
+
+####
+
+
+
+
+####
+
+
+
+####
+
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+
+
+
+
+
+
+
+
+
+
+
+####
+NOTES: to create a @override function faster simply press ^build^ and click the one with [] in front in options
+
+####
